@@ -5,7 +5,7 @@
 This project demonstrates JWT (JSON Web Token) based authentication using a React frontend and an Express backend with PostgreSQL (hosted on Neon).
 It provides user signup, login, and protected route access when a valid token is present.
 
----
+```
 
 # Project Architecture
 
@@ -31,7 +31,7 @@ NIFE-ASSIGNMENT/
 │   ├── package.json
 │   └── README.md
 
----
+```
 
 => Backend (Node.js + Express)
 
@@ -52,7 +52,7 @@ backend/
 │
 ├── package.json                   # Backend dependencies and scripts
 └── package-lock.json
- ---
+ ```
 
 # Features
 
