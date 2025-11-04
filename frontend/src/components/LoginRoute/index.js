@@ -5,8 +5,8 @@ import { TbMailFilled } from "react-icons/tb";
 import { FaLock } from "react-icons/fa6";
 
 const SignupRoute = () => {
-  const [userMail, setUserMail] = useState("nanipinninti123@gmail.com");
-  const [userPassword, setUserPassword] = useState("Nani@123");
+  const [userMail, setUserMail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
   const navigate = useNavigate();
 
   const gotoSignup= ()=>{
