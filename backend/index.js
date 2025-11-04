@@ -13,6 +13,10 @@ app.use(cors({
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Authentication API");
+});
+
 // Your routes
 app.use("/auth", AuthRouter);
 
