@@ -1,26 +1,4 @@
-JWT Authentication (React + Express + MySQL)
-
-# Project Overview
-
-This project demonstrates JWT (JSON Web Token) based authentication using a React frontend and an Express backend with MySQL.
-It provides user signup, login, and protected route access only when a valid token is present.
-
-# Project Architecture
-
-=> Frontend (React + Tailwind CSS)
-
-NIFE-ASSIGNMENT/
-│
-├── login-form/
-│   ├── public/                    # Contains index.html and static assets
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── HomeRoute/
-│   │   │   ├── LoginRoute/
-│   │   │   ├── SignupRoute/
-│   │   │   └── ProtectedRoute/
-```markdown
-JWT Authentication (React + Express + PostgreSQL (Neon))
+*** JWT Authentication (React + Express + PostgreSQL (Neon)) ***
 
 # Project Overview
 
@@ -59,7 +37,7 @@ backend/
 │   └── auth.controllers.js        # Handles signup, login, and JWT generation
 │
 ├── Db/
-│   └── connectDb.js               # PostgreSQL connection (uses `pg` and POSTGRES_CONNECTION_URL)
+│   └── connectDb.js               #PostgreSQL connection (uses `pg` POSTGRES_CONNECTION_URL)
 │
 ├── routes/
 │   └── auth.routes.js             # Defines /signup and /login routes
@@ -84,8 +62,7 @@ backend/
 # Setup Instructions
 
 1. Clone the Repository
-   git clone https://github.com/<your-username>/nife-assignment.git
-
+   git clone https://github.com/aparnaavanapu/nife-assignment.git
 2. Backend Setup
    ** Navigate to backend folder
    cd backend
@@ -134,10 +111,12 @@ backend/
 
 # API Endpoints
 
-| Method | Endpoint           | Description               | Protected |
-| ------ | ------------------ | ------------------------- | --------- |
-| POST   | `/auth/signup`     | Register a new user       | ❌        |
-| POST   | `/auth/login`      | Login and receive JWT     | ❌        |
+| Method | Endpoint              | Description                      | Protected |
+| ------ | --------------------- | -------------------------------- | --------- |
+| POST   | `/api/auth/register`  | Register a new user              | ❌         |
+| POST   | `/api/auth/login`     | Authenticate user and return JWT | ❌         |
+| GET    | `/api/auth/protected` | Example of protected route       | ✅         |
+
 
 
 # Tech Stack
@@ -159,6 +138,19 @@ Backend (from `backend/`):
 Frontend (from `frontend/`):
  - Install: npm install
  - Start: npm start
+
+# Architecture Summary
+
+**Controller Layer** → Handles core logic for user signup and login (password hashing, token generation, etc.).
+
+**Route Layer** → Defines REST API endpoints (e.g., /register, /login, /protected) and connects them to controllers.
+
+**Middleware Layer** → Validates and verifies JWT tokens to protect private routes and ensure authorized access.
+
+**Frontend Layer (React)** → Contains components that manage authentication, store JWT tokens (securely via cookies or localStorage), and protect routes using conditional rendering.
+
+**Database Layer (PostgreSQL on Neon)** → Stores user credentials such as name, email, and hashed password.
+The backend connects to the Neon-hosted PostgreSQL database using the pg Node.js client or Sequelize ORM for secure and efficient data management.
 
 
 # Notes
